@@ -12,11 +12,12 @@ class PokemonApp:
         self.frame = tk.Frame(self.root)
         self.frame.pack(fill=tk.BOTH, expand=True)
 
-        # Définir les colonnes pour le Treeview, sans la colonne "Sprite"
+         # Définir les colonnes pour le Treeview, sans la colonne "Sprite"
         columns = ("ID", "Name", "Game", "Level", "Nature", "Ability", "Method")
-        self.tree = ttk.Treeview(self.frame, columns=columns, show="headings")
+        self.tree = ttk.Treeview(self.frame, columns=columns)
         self.tree.pack(fill=tk.BOTH, expand=True)
 
+        self.tree.heading("#0", text="Image")
         # Définir les en-têtes et colonnes pour le Treeview
         for col in columns:
             self.tree.heading(col, text=col)
